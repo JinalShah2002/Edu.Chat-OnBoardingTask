@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Movies</title>
+</head>
+<body>
+<h1>Movies</h1>
+<img src = "https://previews.123rf.com/images/vladru/vladru1209/vladru120900005/15390094-Film-and-clipboard-symbol-Stock-Photo-movie-reel-movies.jpg" height ="250" width = "175">
+<p>Enter All the information about your movie below:</p>
+<form class="form-horizontal input-append" >
+
+
+    Movie<br>
+    <input id = "moviename" type="text" name="movie" placeholder = "Enter your movie"><br>
+
+
+</form>
+
+
+
+
+<form class="form-horizontal input-append">
+    Year Made<br>
+    <input id ="yearmade" type="text" name="year" placeholder = "Enter the year"><br>
+
+</form>
+
+
+<form class="form-horizontal input-append">
+    Director<br>
+    <input id = "directorm" type="text" name="Director"placeholder = "Enter the director"><br>
+
+
+</form>
+
+
+<form class="form-horizontal input-append">
+    URL for poster<br>
+    <input id ="urlpost" type="url" name="url" placeholder = "Enter the URL"><br>
+
+
+</form>
+
+<script type = text/javascript>
+
+    function movies()
+    {
+        if(typeof(Storage)!=="undefined")
+        {
+
+            var u = document.getElementById("moviename").value;
+            localStorage.setItem("Movie", JSON.stringify(u));
+            console.log (JSON.parse(localStorage.getItem("Movie")));
+
+
+
+
+
+
+
+
+
+            var userIn = document.getElementById("urlpost").value;
+            localStorage.setItem("Movie URL", JSON.stringify(userIn));
+            console.log (JSON.parse(localStorage.getItem("Movie URL")));
+
+
+
+
+            var user = document.getElementById("directorm").value;
+            localStorage.setItem("Director" , JSON.stringify(user));
+            console.log (JSON.parse(localStorage.getItem("Director")));
+
+
+
+
+            var use = document.getElementById("yearmade").value;
+            localStorage.setItem("Year Made" , JSON.stringify(use));
+            console.log (JSON.parse(localStorage.getItem("Year Made")));
+
+
+            document.write("Information Entered: ");
+
+            document.write("<br/>Movie: " + u);
+
+            document.write("<br/>Director of Movie: " + user);
+
+            document.write("<br/>Year Movie was Made: " + use);
+
+            document.write("<br/>URL for Movie: " + userIn);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+
+
+
+    }
+
+
+</script>
+
+
+
+
+<form class="form-horizontal input-append" action = "" method = "get">
+    <!--<button type="submit" class="btn">Sumbit</button>-->
+    <button onclick= movies()  type="submit" value = "Submit Information"   >Submit</button>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body >
